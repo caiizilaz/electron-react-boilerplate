@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react';
+import init from '../dbmodules/models'
 
 type Props = {
   children: React.Node

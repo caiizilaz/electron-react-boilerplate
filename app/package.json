@@ -14,5 +14,9 @@
     "postinstall": "npm run electron-rebuild"
   },
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "path": "^0.12.7",
+    "pg": "^7.4.1",
+    "sequelize": "^4.35.1"
+  }
 }
