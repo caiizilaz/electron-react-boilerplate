@@ -2,17 +2,15 @@ import Model from '../models/memo'
 
 export default {
   create: async (callback, params) => {
-    let res = await Model.create(params)
+    const res = await Model.create(params)
     callback(res)
   },
   read: async (callback) => {
-    let res = await Model.findAll({
-      attributes: ['id', 'text']
-    })
+    const res = await Model.findAll()
     callback(res.map(r => r.dataValues))
   },
   update: async (callback, params) => {
-    let res = await Model.update(
+    const res = await Model.update(
       {
         text: params.text
       },
@@ -23,7 +21,7 @@ export default {
     callback(res)
   },
   delete: async (callback, params) => {
-    let res = await Model.destroy({
+    const res = await Model.destroy({
       where: {
         id: params
       }
