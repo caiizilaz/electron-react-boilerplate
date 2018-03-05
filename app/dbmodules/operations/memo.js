@@ -11,10 +11,23 @@ export default {
     })
     callback(res.map(r => r.dataValues))
   },
-  update: (callback, params) => {
-
+  update: async (callback, params) => {
+    let res = await Model.update(
+      {
+        text: params.text
+      },
+      {
+        where: { id: params.id }
+      }
+    )
+    callback(res)
   },
-  delete: (callback, params) => {
-
+  delete: async (callback, params) => {
+    let res = await Model.destroy({
+      where: {
+        id: params
+      }
+    })
+    callback(res)
   },
 }
